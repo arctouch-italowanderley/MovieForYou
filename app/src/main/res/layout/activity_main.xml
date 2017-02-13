@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2017 ArcTouch LLC.
   ~ All rights reserved.
   ~
@@ -22,8 +21,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.arctouch.wanderley.italo.movieforyou.ui.activities.MainActivity">
 
-    <TextView
+    <com.arctouch.wanderley.italo.movieforyou.ui.views.CustomTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+
 </RelativeLayout>

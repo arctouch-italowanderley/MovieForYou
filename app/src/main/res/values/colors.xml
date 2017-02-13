@@ -17,5 +17,13 @@
     <color name="colorAccent">#FF4081</color>
 
     <!-- OWN COLORS -->
-    <color name="white">#ffffff</color>
+    <color name="white">#FFFFFF</color>
+    <color name="own_ripple">#40000000</color>
+    <color name="text_color">#363d42</color>
+
+    <!-- BUTTON COLORS -->
+    <color name="button_default">#455A64</color>
+    <color name="button_default_pressed">#8c000000</color>
+    <color name="button_border">#CFD8DC</color>
+    <color name="button_default_inactive">#e2e2e2</color>
 </resources>
