@@ -9,7 +9,7 @@ import java.util.List;
  * Created by italowanderley on 13/02/17.
  */
 
-public class Movie {
+public class Movie extends BaseModel {
     @SerializedName("original_title")
     private String mOriginalTitle;
 
@@ -17,7 +17,7 @@ public class Movie {
     private List<Genre> mGenres = new ArrayList<>();
 
     @SerializedName("vote_average")
-    private Integer mVoteAverage;
+    private Float mVoteAverage;
 
     @SerializedName("overview")
     private String mOverview;
@@ -58,7 +58,7 @@ public class Movie {
         return this;
     }
 
-    public Integer getVoteAverage() {
+    public Float getVoteAverage() {
         return mVoteAverage;
     }
 
@@ -67,11 +67,11 @@ public class Movie {
         return mVoteAverage + " / 10";
     }
 
-    public void setVoteAverage(Integer voteAverage) {
+    public void setVoteAverage(Float voteAverage) {
         this.mVoteAverage = voteAverage;
     }
 
-    public Movie withVoteAverage(Integer voteAverage) {
+    public Movie withVoteAverage(Float voteAverage) {
         setVoteAverage(voteAverage);
         return this;
     }

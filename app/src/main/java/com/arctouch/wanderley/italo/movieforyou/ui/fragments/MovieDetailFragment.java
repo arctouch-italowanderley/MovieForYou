@@ -1,24 +1,32 @@
 package com.arctouch.wanderley.italo.movieforyou.ui.fragments;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.arctouch.wanderley.italo.movieforyou.R;
+import com.arctouch.wanderley.italo.movieforyou.data.Movie;
+import com.arctouch.wanderley.italo.movieforyou.ui.activities.MovieDetailActivity;
+import com.arctouch.wanderley.italo.movieforyou.ui.views.CustomTextView;
+
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by italowanderley on 09/02/17.
  */
+@EFragment(R.layout.fragment_movie_detail)
+public class MovieDetailFragment extends BaseFragment {
 
-public class MovieDetailFragment extends Fragment {
+    @ViewById
+    protected CustomTextView mMovieTitle, mMovieGenres, mMovieVoteAverage, mMovieOverview;
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_movie_detail, container);
-        return view;
+    private Movie mMovie;
+
+    @AfterViews
+    protected void movieDetailFragmentAfterViews() {
+        mMovie = ((MovieDetailActivity) mActivity).getMovie();
+
+        setText(mMovieTitle, mMovie.getOriginalTitle());
+        setText(mMovieGenres, mMovie.getFormattedGenres());
+        setText(mMovieVoteAverage, mMovie.getFormattedVoteAverage());
+        setText(mMovieOverview, mMovie.getOverview());
     }
 }

@@ -31,8 +31,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.activities.MainActivity" />
-        <activity android:name=".ui.activities.MovieDetailActivity" />
+        <activity android:name=".ui.activities.MainActivity_" />
+        <activity android:name=".ui.activities.MovieDetailActivity_" />
 
     </application>
 

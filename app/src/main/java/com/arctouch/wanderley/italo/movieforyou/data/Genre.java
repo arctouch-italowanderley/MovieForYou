@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by italowanderley on 13/02/17.
  */
 
-public class Genre {
+public class Genre extends BaseModel {
     @SerializedName("id")
     private Integer mId;
 

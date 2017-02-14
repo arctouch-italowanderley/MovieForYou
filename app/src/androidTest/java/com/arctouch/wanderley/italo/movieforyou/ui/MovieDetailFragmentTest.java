@@ -1,23 +1,22 @@
 package com.arctouch.wanderley.italo.movieforyou.ui;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.arctouch.wanderley.italo.movieforyou.BaseTest;
-import com.arctouch.wanderley.italo.movieforyou.data.Genre;
 import com.arctouch.wanderley.italo.movieforyou.data.Movie;
 import com.arctouch.wanderley.italo.movieforyou.robots.MovieDetailAnalyserRobot;
 import com.arctouch.wanderley.italo.movieforyou.ui.activities.MovieDetailActivity;
+import com.arctouch.wanderley.italo.movieforyou.ui.activities.MovieDetailActivity_;
+import com.google.gson.Gson;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by italowanderley on 13/02/17.
@@ -26,7 +25,7 @@ import java.util.List;
 public class MovieDetailFragmentTest extends BaseTest {
 
     @Rule
-    public ActivityTestRule<MovieDetailActivity> mActivityRule = new ActivityTestRule(MovieDetailActivity.class, false, false);
+    public ActivityTestRule<MovieDetailActivity_> mActivityRule = new ActivityTestRule(MovieDetailActivity_.class, false, false);
 
     private static Movie mMovie;
 
@@ -34,26 +33,23 @@ public class MovieDetailFragmentTest extends BaseTest {
 
     @BeforeClass
     public static void movieDetailFragmentClassSetUpConfiguration() {
-        List<Genre> genres = new ArrayList<>();
-        genres.add(new Genre().withId(1).withName("genre 1"));
-        genres.add(new Genre().withId(2).withName("genre 2"));
-
-        mMovie = new Movie().withOriginalTitle("Filme Bacana")
-                .withGenres(genres)
-                .withVoteAverage(7)
-                .withOverview("Esse filme eh muito bacana");
+        mMovie = new Gson().fromJson(readMockedJson("movie_mock"), Movie.class);
     }
 
     @Before
     public void movieDetailFragmentSetUpConfiguration() {
-        mActivityRule.launchActivity(new Intent());
-
+        mActivityRule.launchActivity(new Intent().putExtra("mMovie", mMovie));
         mActivity = mActivityRule.getActivity();
     }
 
     @Test
     public void verifyIntegrityOfView() throws Exception {
+        // TODO: add here a more appropriated verification for the portrait layout as landscape layout
         MovieDetailAnalyserRobot robot = new MovieDetailAnalyserRobot(mMovie);
+        robot.analyseTexts();
+
+        rotateToLandscape(mActivity);
+
         robot.analyseTexts();
     }
 }

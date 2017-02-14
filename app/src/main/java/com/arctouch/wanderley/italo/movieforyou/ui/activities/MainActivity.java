@@ -12,16 +12,10 @@
 
 package com.arctouch.wanderley.italo.movieforyou.ui.activities;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
 import com.arctouch.wanderley.italo.movieforyou.R;
 
-public class MainActivity extends AppCompatActivity {
+import org.androidannotations.annotations.EActivity;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+@EActivity(R.layout.activity_main)
+public class MainActivity extends BaseActivity {
 }

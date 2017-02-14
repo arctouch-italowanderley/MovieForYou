@@ -1,8 +1,10 @@
 package com.arctouch.wanderley.italo.movieforyou;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.core.deps.guava.io.CharStreams;
+import android.support.v7.app.AppCompatActivity;
 
 import com.arctouch.wanderley.italo.movieforyou.core.BaseApplication;
 
@@ -40,6 +42,30 @@ public class BaseTest {
         } catch (NullPointerException e) {
             printExceptionMessage(e, "You have to see the state of the tests. Maybe mAppContext is null...");
             throw new IllegalStateException("You have to see the state of the tests. Maybe mAppContext is null...");
+        }
+    }
+
+    public void rotateToLandscape(AppCompatActivity activity) {
+        rotateToLandscape(activity, false);
+    }
+
+    public void rotateToLandscape(AppCompatActivity activity, boolean isReverse) {
+        if (isReverse) {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
+        } else {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
+    }
+
+    public void rotateToPortrait(AppCompatActivity activity) {
+        rotateToPortrait(activity, false);
+    }
+
+    public void rotateToPortrait(AppCompatActivity activity, boolean isReverse) {
+        if (isReverse) {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT);
+        } else {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
     }
 }

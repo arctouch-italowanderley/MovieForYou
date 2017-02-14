@@ -19,10 +19,10 @@ public class MovieDetailAnalyserRobot extends BaseViewAnalyserRobot {
 
     @Override
     public BaseViewAnalyserRobot analyseTexts() {
-        verifyIfThisTextViewExists(R.id.movie_title, mMovie.getOriginalTitle());
-        verifyIfThisTextExists(R.id.movie_genres, mMovie.getFormattedGenres());
-        verifyIfThisTextExists(R.id.movie_vote_average, mMovie.getFormattedVoteAverage());
-        verifyIfThisTextExists(R.id.movie_overview, mMovie.getOverview());
+        verifyIfThisTextViewExists(R.id.m_movie_title, mMovie.getOriginalTitle());
+        verifyIfThisTextViewExists(R.id.m_movie_genres, mMovie.getFormattedGenres());
+        verifyIfThisTextViewExists(R.id.m_movie_vote_average, mMovie.getFormattedVoteAverage());
+        verifyIfThisTextViewExists(R.id.m_movie_overview, mMovie.getOverview());
         return this;
     }
 

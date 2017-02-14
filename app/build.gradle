@@ -11,6 +11,7 @@
  */
 
 apply plugin: "com.android.application"
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -49,6 +50,13 @@ android {
     }
 }
 
+apt {
+    arguments {
+        resourcePackageName android.defaultConfig.applicationId
+        androidManifestFile variant.outputs[0]?.processResources?.manifestFile
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -63,6 +71,10 @@ dependencies {
     // Dependencies for local unit tests
     testCompile "junit:junit:$rootProject.ext.junitVersion"
 
+    // Android Annotations
+    apt "org.androidannotations:androidannotations:$rootProject.ext.androidAnnotations"
+    compile "org.androidannotations:androidannotations-api:$rootProject.ext.androidAnnotations"
+
     // Espresso UI Testing
     androidTestCompile "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
     androidTestCompile "com.android.support.test.espresso:espresso-contrib:$rootProject.espressoVersion"
@@ -76,5 +88,5 @@ dependencies {
     androidTestCompile "com.android.support:design:$rootProject.supportLibraryVersion"
 
     // Google APIs
-    compile 'com.google.code.gson:gson:2.8.0'
+    compile "com.google.code.gson:gson:$rootProject.ext.googleGson"
 }
