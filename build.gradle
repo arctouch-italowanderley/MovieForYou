@@ -33,4 +33,7 @@ ext {
     espressoVersion = '2.2.2'
     androidAnnotations = '4.2.0'
     googleGson = '2.8.0'
+    picasso = '2.5.2'
+    retrofit = '2.1.0'
+    okhttp = '3.6.0'
 }

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="m_api_key" translatable="false">ab1d8287bf920723e20399d553e561b3</string>
+    <string name="m_api_url" translatable="false">https://api.themoviedb.org/3</string>
+</resources>

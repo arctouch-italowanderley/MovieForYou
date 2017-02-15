@@ -22,6 +22,12 @@ public class Movie extends BaseModel {
     @SerializedName("overview")
     private String mOverview;
 
+    @SerializedName("poster_path")
+    private String mPosterPath;
+
+    @SerializedName("backdrop_path")
+    private String mBackdropPath;
+
     public String getOriginalTitle() {
         return mOriginalTitle;
     }
@@ -86,6 +92,32 @@ public class Movie extends BaseModel {
 
     public Movie withOverview(String overview) {
         setOverview(overview);
+        return this;
+    }
+
+    public String getPosterPath() {
+        return mPosterPath;
+    }
+
+    public void setPosterPath(String posterPath) {
+        this.mPosterPath = posterPath;
+    }
+
+    public Movie withPosterPath(String posterPath) {
+        setPosterPath(posterPath);
+        return this;
+    }
+
+    public String getBackdropPath() {
+        return mBackdropPath;
+    }
+
+    public void setBackdropPath(String backdropPath) {
+        this.mBackdropPath = backdropPath;
+    }
+
+    public Movie withBackdropPath(String backdropPath) {
+        setBackdropPath(backdropPath);
         return this;
     }
 }

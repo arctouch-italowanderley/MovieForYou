@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">MovieForYou</string>
-
     <!-- FAKE DATA -->
     <string name="lipsum_movie_name">Lorem ipsum dolor sit amet, consectetur.</string>
     <string name="lipsum_movie_genres">Lorem ipsum dolor sit amet, consectetur.</string>

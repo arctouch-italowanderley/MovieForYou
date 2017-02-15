@@ -1,7 +1,6 @@
 package com.arctouch.wanderley.italo.movieforyou.ui;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
