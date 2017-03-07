@@ -13,6 +13,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arctouch.wanderley.italo.movieforyou">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".core.BaseApplication"
         android:allowBackup="true"
@@ -31,7 +33,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.activities.MainActivity_" />
+        <activity android:name=".ui.activities.MovieListActivity_" />
         <activity android:name=".ui.activities.MovieDetailActivity_" />
 
     </application>

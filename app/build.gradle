@@ -65,6 +65,23 @@ android {
             events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
         }
     }
+
+    sourceSets {
+        String sharedJavaTestDir = 'src/sharedTest/java'
+        String sharedAssetsTestDir = 'src/sharedTest/assets'
+
+        test {
+            java.srcDirs += sharedJavaTestDir
+            assets.srcDirs += sharedAssetsTestDir
+            resources.srcDirs += sharedAssetsTestDir
+        }
+
+        androidTest {
+            java.srcDirs += sharedJavaTestDir
+            assets.srcDirs += sharedAssetsTestDir
+        }
+    }
+    buildToolsVersion '25.0.0'
 }
 
 apt {
@@ -99,12 +116,18 @@ dependencies {
 
     // Google APIs
     compile "com.google.code.gson:gson:$rootProject.ext.googleGson"
+    compile "com.google.guava:guava:$rootProject.ext.guava"
 
     // Square
     compile "com.squareup.picasso:picasso:$rootProject.ext.picasso"
     compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
     compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit"
     compile "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp"
+    compile "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rootProject.ext.retrofitRxjavaAdapter"
+
+    // RxJava
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava"
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroid"
 
     // Resolve conflicts between main and test APK:
     androidTestCompile "com.android.support:support-annotations:$rootProject.supportLibraryVersion"

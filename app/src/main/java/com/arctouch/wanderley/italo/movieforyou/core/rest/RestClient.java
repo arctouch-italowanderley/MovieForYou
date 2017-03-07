@@ -2,6 +2,8 @@ package com.arctouch.wanderley.italo.movieforyou.core.rest;
 
 import android.util.Log;
 
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -119,6 +121,7 @@ public class RestClient<RestService> {
                 .client(client)
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
 

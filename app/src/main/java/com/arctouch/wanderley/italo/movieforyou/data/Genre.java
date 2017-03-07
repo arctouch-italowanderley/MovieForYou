@@ -7,6 +7,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Genre extends BaseModel {
+
     @SerializedName("id")
     private Integer mId;
 
@@ -18,7 +19,7 @@ public class Genre extends BaseModel {
     }
 
     public void setId(Integer id) {
-        this.mId = id;
+        mId = id;
     }
 
     public Genre withId(Integer id) {
@@ -31,7 +32,7 @@ public class Genre extends BaseModel {
     }
 
     public void setName(String name) {
-        this.mName = name;
+        mName = name;
     }
 
     public Genre withName(String name) {

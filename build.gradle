@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:2.3.0'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
@@ -36,4 +36,8 @@ ext {
     picasso = '2.5.2'
     retrofit = '2.1.0'
     okhttp = '3.6.0'
+    guava = '20.0'
+    rxjava = '2.0.6'
+    rxandroid = '2.0.1'
+    retrofitRxjavaAdapter = '1.0.0'
 }

@@ -35,12 +35,12 @@ public class RestSettings {
         mAuthenticatedMovieDBService = mAuthenticatedMovieDBClient.getService(AuthenticatedMovieDBApiService.class);
     }
 
-    public RestClient<AnonymousMovieDBApiService> getAnnonimousMovieDBClient() {
-        return mAnonymousMovieDBClient;
+    public AnonymousMovieDBApiService getAnonymousClient() {
+        return mAnonymousMovieDBApiService;
     }
 
-    public RestClient<AuthenticatedMovieDBApiService> getAuthenticatedMovieDBClient() {
-        return mAuthenticatedMovieDBClient;
+    public AuthenticatedMovieDBApiService getAuthenticatedClient() {
+        return mAuthenticatedMovieDBService;
     }
 
     public boolean isTestingOn() {
