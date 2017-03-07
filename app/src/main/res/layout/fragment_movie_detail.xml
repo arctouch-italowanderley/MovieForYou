@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_movie_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/m_movie_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_image" />
+
+    <com.arctouch.wanderley.italo.movieforyou.ui.views.CustomTextView
+        android:id="@+id/m_movie_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/m_movie_image"
+        android:layout_marginTop="@dimen/margin_between_elements_special_small_size"
+        android:text="@string/lipsum_movie_name"
+        android:textSize="@dimen/text_biggest_size" />
+
+    <com.arctouch.wanderley.italo.movieforyou.ui.views.CustomTextView
+        android:id="@+id/m_movie_genres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/m_movie_title"
+        android:layout_marginTop="@dimen/margin_between_elements_special_small_size"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/lipsum_movie_genres"
+        android:textSize="@dimen/text_normal_size" />
+
+    <com.arctouch.wanderley.italo.movieforyou.ui.views.CustomTextView
+        android:id="@+id/m_movie_vote_average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/m_movie_title"
+        android:layout_marginTop="@dimen/margin_between_elements_special_small_size"
+        android:text="@string/lipsum_movie_rate"
+        android:textSize="@dimen/text_normal_size" />
+
+    <com.arctouch.wanderley.italo.movieforyou.ui.views.CustomTextView
+        android:id="@+id/m_movie_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/m_movie_genres"
+        android:layout_marginTop="@dimen/margin_between_elements_small_size"
+        android:text="@string/lipsum_movie_overview"
+        android:textSize="@dimen/text_big_size" />
+
+</RelativeLayout>

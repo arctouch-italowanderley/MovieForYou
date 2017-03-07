@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">MovieForYou</string>
+    <!-- FAKE DATA -->
+    <string name="lipsum_movie_name">Lorem ipsum dolor sit amet, consectetur.</string>
+    <string name="lipsum_movie_genres">Lorem ipsum dolor sit amet, consectetur.</string>
+    <string name="lipsum_movie_rate">4.5 / 5</string>
+    <string name="lipsum_movie_overview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet euismod dapibus. Nunc sit amet pulvinar nulla. Quisque consequat rutrum nisl a consequat. Suspendisse eu lorem erat. Aliquam orci purus, semper nec lacinia id, dignissim eleifend mauris. Donec facilisis id elit quis luctus. Nullam eros sapien, facilisis sed odio nec.</string>
+
+    <!-- ERROR MSGS -->
+    <string name="text_field_error_only_numbers">utilize apenas números</string>
+    <string name="text_field_error_name">informe seu nome completo</string>
+    <string name="text_field_error_invalid_email">e-mail inválido</string>
+    <string name="text_field_error_mandatory">campo obrigatório</string>
 </resources>

@@ -6,9 +6,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 
@@ -20,4 +18,22 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    // Sdk and tools
+    minSdkVersion = 16
+    targetSdkVersion = 25
+    compileSdkVersion = 24
+    buildToolsVersion = '24.0.2'
+
+    // App dependencies
+    supportLibraryVersion = '25.1.1'
+    junitVersion = '4.12'
+    espressoVersion = '2.2.2'
+    androidAnnotations = '4.2.0'
+    googleGson = '2.8.0'
+    picasso = '2.5.2'
+    retrofit = '2.1.0'
+    okhttp = '3.6.0'
 }
