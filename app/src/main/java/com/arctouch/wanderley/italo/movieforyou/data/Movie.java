@@ -10,11 +10,18 @@ import java.util.List;
  */
 
 public class Movie extends BaseModel {
+
+    @SerializedName("title")
+    private String mTitle;
+
     @SerializedName("original_title")
     private String mOriginalTitle;
 
     @SerializedName("genres")
     private List<Genre> mGenres = new ArrayList<>();
+
+    @SerializedName("genre_ids")
+    private List<Integer> mGenreIds = new ArrayList<>();
 
     @SerializedName("vote_average")
     private Float mVoteAverage;
@@ -28,12 +35,25 @@ public class Movie extends BaseModel {
     @SerializedName("backdrop_path")
     private String mBackdropPath;
 
+    public String getTitle() {
+        return mTitle;
+    }
+
+    public void setTitle(String title) {
+        mTitle = title;
+    }
+
+    public Movie withTitle(String title) {
+        setTitle(title);
+        return this;
+    }
+
     public String getOriginalTitle() {
         return mOriginalTitle;
     }
 
     public void setOriginalTitle(String originalTitle) {
-        this.mOriginalTitle = originalTitle;
+        mOriginalTitle = originalTitle;
     }
 
     public Movie withOriginalTitle(String originalTitle) {
@@ -45,18 +65,8 @@ public class Movie extends BaseModel {
         return mGenres;
     }
 
-    public String getFormattedGenres() {
-        StringBuilder formattedGenres = new StringBuilder("");
-
-        for (int i = 0; i < mGenres.size(); i++) {
-            formattedGenres.append(mGenres.get(i).getName());
-            if (i != mGenres.size() - 1) formattedGenres.append(", ");
-        }
-        return formattedGenres.toString();
-    }
-
     public void setGenres(List<Genre> genres) {
-        this.mGenres = genres;
+        mGenres = genres;
     }
 
     public Movie withGenres(List<Genre> genres) {
@@ -64,17 +74,33 @@ public class Movie extends BaseModel {
         return this;
     }
 
+    public void cleanGenre() {
+        mGenres.clear();
+    }
+
+    public List<Integer> getGenreIds() {
+        return mGenreIds;
+    }
+
+    public void setGenreIds(List<Integer> genreIds) {
+        mGenreIds = genreIds;
+    }
+
+    public Movie withGenreIds(List<Integer> genreIds) {
+        setGenreIds(genreIds);
+        return this;
+    }
+
+    public void cleanGenreIds() {
+        mGenreIds.clear();
+    }
+
     public Float getVoteAverage() {
         return mVoteAverage;
     }
 
-    public String getFormattedVoteAverage() {
-        // TODO: verify if this limit (10) is right and what is the best way to update this info
-        return mVoteAverage + " / 10";
-    }
-
     public void setVoteAverage(Float voteAverage) {
-        this.mVoteAverage = voteAverage;
+        mVoteAverage = voteAverage;
     }
 
     public Movie withVoteAverage(Float voteAverage) {
@@ -87,7 +113,7 @@ public class Movie extends BaseModel {
     }
 
     public void setOverview(String overview) {
-        this.mOverview = overview;
+        mOverview = overview;
     }
 
     public Movie withOverview(String overview) {
@@ -100,7 +126,7 @@ public class Movie extends BaseModel {
     }
 
     public void setPosterPath(String posterPath) {
-        this.mPosterPath = posterPath;
+        mPosterPath = posterPath;
     }
 
     public Movie withPosterPath(String posterPath) {
@@ -113,7 +139,7 @@ public class Movie extends BaseModel {
     }
 
     public void setBackdropPath(String backdropPath) {
-        this.mBackdropPath = backdropPath;
+        mBackdropPath = backdropPath;
     }
 
     public Movie withBackdropPath(String backdropPath) {

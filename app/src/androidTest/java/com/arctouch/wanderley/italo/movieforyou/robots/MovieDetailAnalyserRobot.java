@@ -1,28 +1,28 @@
 package com.arctouch.wanderley.italo.movieforyou.robots;
 
 import com.arctouch.wanderley.italo.movieforyou.R;
-import com.arctouch.wanderley.italo.movieforyou.data.Movie;
+import com.arctouch.wanderley.italo.movieforyou.ui.viewmodels.MovieViewModel;
 
 /**
  * Created by italowanderley on 13/02/17.
  */
 
 public class MovieDetailAnalyserRobot extends BaseViewAnalyserRobot {
-    private Movie mMovie;
+    private MovieViewModel mMovieViewModel;
 
     private MovieDetailAnalyserRobot() {
     }
 
-    public MovieDetailAnalyserRobot(Movie movie) {
-        mMovie = movie;
+    public MovieDetailAnalyserRobot(MovieViewModel movieViewModel) {
+        mMovieViewModel = movieViewModel;
     }
 
     @Override
     public BaseViewAnalyserRobot analyseTexts() {
-        verifyIfThisTextViewExists(R.id.m_movie_title, mMovie.getOriginalTitle());
-        verifyIfThisTextViewExists(R.id.m_movie_genres, mMovie.getFormattedGenres());
-        verifyIfThisTextViewExists(R.id.m_movie_vote_average, mMovie.getFormattedVoteAverage());
-        verifyIfThisTextViewExists(R.id.m_movie_overview, mMovie.getOverview());
+        verifyIfThisTextViewExists(R.id.m_movie_title, mMovieViewModel.getOriginalTitle());
+        verifyIfThisTextViewExists(R.id.m_movie_genres, mMovieViewModel.getGenres());
+        verifyIfThisTextViewExists(R.id.m_movie_vote_average, mMovieViewModel.getVoteAverage());
+        verifyIfThisTextViewExists(R.id.m_movie_overview, mMovieViewModel.getOverview());
         return this;
     }
 

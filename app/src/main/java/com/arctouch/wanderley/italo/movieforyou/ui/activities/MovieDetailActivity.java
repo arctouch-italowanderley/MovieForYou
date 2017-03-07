@@ -3,9 +3,9 @@ package com.arctouch.wanderley.italo.movieforyou.ui.activities;
 import android.support.v4.app.FragmentManager;
 
 import com.arctouch.wanderley.italo.movieforyou.R;
-import com.arctouch.wanderley.italo.movieforyou.data.Movie;
 import com.arctouch.wanderley.italo.movieforyou.ui.fragments.MovieDetailFragment;
 import com.arctouch.wanderley.italo.movieforyou.ui.fragments.MovieDetailFragment_;
+import com.arctouch.wanderley.italo.movieforyou.ui.viewmodels.MovieViewModel;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -20,7 +20,7 @@ public class MovieDetailActivity extends BaseActivity {
 
     @Extra
     @InstanceState
-    protected Movie mMovie;
+    protected MovieViewModel mMovieViewModel;
 
     @InstanceState
     protected String mFragmentTag;
@@ -49,7 +49,7 @@ public class MovieDetailActivity extends BaseActivity {
                 .commitNow();
     }
 
-    public Movie getMovie() {
-        return mMovie;
+    public MovieViewModel getMovieViewModel() {
+        return mMovieViewModel;
     }
 }

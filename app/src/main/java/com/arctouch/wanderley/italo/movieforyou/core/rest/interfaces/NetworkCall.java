@@ -1,7 +1,5 @@
 package com.arctouch.wanderley.italo.movieforyou.core.rest.interfaces;
 
-import com.arctouch.wanderley.italo.movieforyou.core.constants.EventTypes;
-
 import java.io.IOException;
 import java.io.Serializable;
 
@@ -20,6 +18,4 @@ public abstract class NetworkCall implements Serializable {
 
     public void doError() {
     }
-
-    public abstract EventTypes requireEvent();
 }

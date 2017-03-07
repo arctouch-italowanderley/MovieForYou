@@ -9,6 +9,7 @@ import com.arctouch.wanderley.italo.movieforyou.data.Movie;
 import com.arctouch.wanderley.italo.movieforyou.robots.MovieDetailAnalyserRobot;
 import com.arctouch.wanderley.italo.movieforyou.ui.activities.MovieDetailActivity;
 import com.arctouch.wanderley.italo.movieforyou.ui.activities.MovieDetailActivity_;
+import com.arctouch.wanderley.italo.movieforyou.ui.viewmodels.MovieViewModel;
 import com.google.gson.Gson;
 
 import org.junit.Before;
@@ -26,25 +27,26 @@ public class MovieDetailFragmentTest extends BaseTest {
     @Rule
     public ActivityTestRule<MovieDetailActivity_> mActivityRule = new ActivityTestRule(MovieDetailActivity_.class, false, false);
 
-    private static Movie mMovie;
+    private static MovieViewModel mMovieViewModel;
 
     private MovieDetailActivity mActivity;
 
     @BeforeClass
     public static void movieDetailFragmentClassSetUpConfiguration() {
-        mMovie = new Gson().fromJson(readMockedJson("movie_mock"), Movie.class);
+        Movie movie = new Gson().fromJson(readMockedJson("movie_mock"), Movie.class);
+        mMovieViewModel = new MovieViewModel(movie);
     }
 
     @Before
     public void movieDetailFragmentSetUpConfiguration() {
-        mActivityRule.launchActivity(new Intent().putExtra("mMovie", mMovie));
+        mActivityRule.launchActivity(new Intent().putExtra("mMovieViewModel", mMovieViewModel));
         mActivity = mActivityRule.getActivity();
     }
 
     @Test
     public void verifyIntegrityOfView() throws Exception {
         // TODO: add here a more appropriated verification for the portrait layout as landscape layout
-        MovieDetailAnalyserRobot robot = new MovieDetailAnalyserRobot(mMovie);
+        MovieDetailAnalyserRobot robot = new MovieDetailAnalyserRobot(mMovieViewModel);
         robot.analyseTexts();
 
         rotateToLandscape(mActivity);

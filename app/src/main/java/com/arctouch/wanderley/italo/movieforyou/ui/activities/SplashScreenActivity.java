@@ -25,7 +25,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MainActivity_.intent(this).start();
+        MovieListActivity_.intent(this).start();
         finish();
     }
 }

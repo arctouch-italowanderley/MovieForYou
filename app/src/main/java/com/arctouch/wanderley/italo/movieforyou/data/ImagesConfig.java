@@ -36,7 +36,7 @@ public class ImagesConfig extends BaseModel {
     }
 
     public void setBaseUrl(String baseUrl) {
-        this.mBaseUrl = baseUrl;
+        mBaseUrl = baseUrl;
     }
 
     public ImagesConfig withBaseUrl(String baseUrl) {
@@ -49,7 +49,7 @@ public class ImagesConfig extends BaseModel {
     }
 
     public void setSecureBaseUrl(String secureBaseUrl) {
-        this.mSecureBaseUrl = secureBaseUrl;
+        mSecureBaseUrl = secureBaseUrl;
     }
 
     public ImagesConfig withSecureBaseUrl(String secureBaseUrl) {
@@ -62,7 +62,7 @@ public class ImagesConfig extends BaseModel {
     }
 
     public void setBackdropSizes(List<String> backdropSizes) {
-        this.mBackdropSizes = backdropSizes;
+        mBackdropSizes = backdropSizes;
     }
 
     public ImagesConfig withBackdropSizes(List<String> backdropSizes) {
@@ -75,7 +75,7 @@ public class ImagesConfig extends BaseModel {
     }
 
     public void setLogoSizes(List<String> logoSizes) {
-        this.mLogoSizes = logoSizes;
+        mLogoSizes = logoSizes;
     }
 
     public ImagesConfig withLogoSizes(List<String> logoSizes) {
@@ -88,7 +88,7 @@ public class ImagesConfig extends BaseModel {
     }
 
     public void setPosterSizes(List<String> posterSizes) {
-        this.mPosterSizes = posterSizes;
+        mPosterSizes = posterSizes;
     }
 
     public ImagesConfig withPosterSizes(List<String> posterSizes) {
@@ -101,7 +101,7 @@ public class ImagesConfig extends BaseModel {
     }
 
     public void setProfileSizes(List<String> profileSizes) {
-        this.mProfileSizes = profileSizes;
+        mProfileSizes = profileSizes;
     }
 
     public ImagesConfig withProfileSizes(List<String> profileSizes) {
@@ -114,7 +114,7 @@ public class ImagesConfig extends BaseModel {
     }
 
     public void setStillSizes(List<String> stillSizes) {
-        this.mStillSizes = stillSizes;
+        mStillSizes = stillSizes;
     }
 
     public ImagesConfig withStillSizes(List<String> stillSizes) {

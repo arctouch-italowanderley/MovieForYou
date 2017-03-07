@@ -21,7 +21,7 @@ public class ImagesConfigWrapper extends BaseModel {
     }
 
     public void setImagesConfig(ImagesConfig imagesConfig) {
-        this.mImagesConfig = imagesConfig;
+        mImagesConfig = imagesConfig;
     }
 
     public ImagesConfigWrapper withImagesConfig(ImagesConfig imagesConfig) {
@@ -34,7 +34,7 @@ public class ImagesConfigWrapper extends BaseModel {
     }
 
     public void setChangeKeys(List<String> changeKeys) {
-        this.mChangeKeys = changeKeys;
+        mChangeKeys = changeKeys;
     }
 
     public ImagesConfigWrapper withChangeKeys(List<String> changeKeys) {
